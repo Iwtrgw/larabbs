@@ -28,3 +28,6 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ForgotPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ForgotPasswordController@reset');
+
+/* User CUR路由*/
+Route::resource('users', 'UsersController', ['only' => ['show', 'update', 'edit']]);

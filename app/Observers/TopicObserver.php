@@ -27,4 +27,9 @@ class TopicObserver {
 			dispatch(new TranslateSlug($topic));
 		}
 	}
+
+	// 当话题删除时连带该话题下的所有评论一起删除
+	public function deleted(Topic $topic) {
+		\DB::table('replies')->where('topic_id', $topic->id)->delete();
+	}
 }

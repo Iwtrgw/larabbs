@@ -9,6 +9,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable {
 	use Traits\ActiveUserHelper;
+	use Traits\LastActivedAtHelper;
 	use HasRoles;
 	use Notifiable {
 		notify as protected laravelNotify;
@@ -32,6 +33,8 @@ class User extends Authenticatable {
 	protected $fillable = [
 		'name', 'email', 'password', 'introduction', 'avatar',
 	];
+
+	protected $dates = ['last_actived_at'];
 
 	/**
 	 * The attributes that should be hidden for arrays.

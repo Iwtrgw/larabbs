@@ -56,4 +56,11 @@ class CategoriesController extends Controller {
          dd($categor);
         }
 	}
+
+    public function test(Request $request,User $user)
+    {
+        // testing
+        $par = $request->route('id');
+        dd($user->id === $par);
+	}
 }

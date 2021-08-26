@@ -7,13 +7,13 @@ use App\Models\Link;
 use App\Models\Topic;
 use App\Models\User;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 
 /**
  * Class CategoriesController
  * @package App\Http\Controllers
  */
-class CategoriesController extends Controller {
+class CategoriesController extends Controller
+{
 
     /**
      * @param Category $category
@@ -23,38 +23,22 @@ class CategoriesController extends Controller {
      * @param Link $link
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Category $category, Request $request, Topic $topic, User $user, Link $link) {
-		// 读取分类 ID 关联的话题，并按每 20 条分页
-		$topics = $topic->withOrder($request->order)
-			->where('category_id', $category->id)
-			->paginate(20);
-
-		// 取出活跃用户列表
-		$active_users = $user->getActiveUsers();
-
-		// 资源链接
-		$links = $link->getAllCached();
-
-		// 传参变量话题和分类到模板中
-		return view('topics.index', compact('topics', 'category', 'active_users', 'links'));
-	}
-
-    /**
-     *  保存
-     * @param Request $request
-     */
-    public function save(Request $request)
+    public function show(Category $category, Request $request, Topic $topic, User $user, Link $link)
     {
-        // 数据接收
-        $data = $request->only(['title','type','content']);
-        $user_id = Auth::id();
-        $data['user_id'] = $user_id;
-        // 保存
-        $categor = new Category();
-        $categor->fill($data);
-        if (!$categor->save()){
-         dd($categor);
-        }
-	}
+        // 读取分类 ID 关联的话题，并按每 20 条分页
+        $topics = $topic->withOrder($request->order)
+            ->where('category_id', $category->id)
+            ->paginate(20);
+
+        // 取出活跃用户列表
+        $active_users = $user->getActiveUsers();
+
+        // 资源链接
+        $links = $link->getAllCached();
+
+        // 传参变量话题和分类到模板中
+        return view('topics.index', compact('topics', 'category', 'active_users', 'links'));
+    }
+
 
 }

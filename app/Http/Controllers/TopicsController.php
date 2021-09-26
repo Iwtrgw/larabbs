@@ -8,16 +8,30 @@ use App\Models\Category;
 use App\Models\Link;
 use App\Models\Topic;
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
+/**
+ * Class TopicsController
+ * @package App\Http\Controllers
+ */
 class TopicsController extends Controller
 {
+    /**
+     * TopicsController constructor.
+     */
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['index', 'show']]);
     }
 
+    /**
+     * @param TopicRequest $request
+     * @param Topic $topic
+     * @param User $user
+     * @param Link $link
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index(TopicRequest $request, Topic $topic, User $user, Link $link)
     {
 
@@ -28,6 +42,11 @@ class TopicsController extends Controller
         return view('topics.index', compact('topics', 'active_users', 'links'));
     }
 
+    /**
+     * @param Request $request
+     * @param Topic $topic
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
     public function show(Request $request, Topic $topic)
     {
 
@@ -38,6 +57,10 @@ class TopicsController extends Controller
         return view('topics.show', compact('topic'));
     }
 
+    /**
+     * @param Topic $topic
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function create(Topic $topic)
     {
 
@@ -45,6 +68,11 @@ class TopicsController extends Controller
         return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
+    /**
+     * @param TopicRequest $request
+     * @param Topic $topic
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(TopicRequest $request, Topic $topic)
     {
         $topic->fill($request->all());
@@ -54,6 +82,11 @@ class TopicsController extends Controller
         return redirect()->to($topic->link())->with('message', '成功创建话题！');
     }
 
+    /**
+     * @param Topic $topic
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function edit(Topic $topic)
     {
         $this->authorize('update', $topic);
@@ -63,6 +96,12 @@ class TopicsController extends Controller
         return view('topics.create_and_edit', compact('topic', 'categories'));
     }
 
+    /**
+     * @param TopicRequest $request
+     * @param Topic $topic
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function update(TopicRequest $request, Topic $topic)
     {
         $this->authorize('update', $topic);
@@ -71,6 +110,11 @@ class TopicsController extends Controller
         return redirect()->to($topic->link())->with('message', '更新成功！');
     }
 
+    /**
+     * @param Topic $topic
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function destroy(Topic $topic)
     {
         $this->authorize('destroy', $topic);
@@ -81,13 +125,18 @@ class TopicsController extends Controller
     }
 
     /* 图片上传处理 */
+    /**
+     * @param Request $request
+     * @param ImageUploadHandler $uploader
+     * @return array
+     */
     public function uploadImage(Request $request, ImageUploadHandler $uploader)
     {
 
         // 初始休返回数据 ，默认是失败的
         $data = [
-            'success' => false,
-            'msg' => '上传失败！',
+            'success'   => false,
+            'msg'       => '上传失败！',
             'file_path' => '',
         ];
 

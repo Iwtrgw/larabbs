@@ -7,6 +7,7 @@ use App\Models\Link;
 use App\Models\Topic;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class CategoriesController
@@ -44,9 +45,15 @@ class CategoriesController extends Controller {
      */
     public function save(Request $request)
     {
-        // TODO
-        $data = $request->all();
-
-        dd($data);
+        // 数据接收
+        $data = $request->only(['title','type','content']);
+        $user_id = Auth::id();
+        $data['user_id'] = $user_id;
+        // 保存
+        $categor = new Category();
+        $categor->fill($data);
+        if (!$categor->save()){
+         dd($categor);
+        }
 	}
 }

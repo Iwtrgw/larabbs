@@ -45,5 +45,8 @@ class CategoriesController extends Controller {
     public function save(Request $request)
     {
         // TODO
+        $data = $request->all();
+
+        dd($data);
 	}
 }

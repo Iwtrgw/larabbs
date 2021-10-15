@@ -51,7 +51,7 @@ trait LastActivedAtHelper {
 		Redis::del($hash);
 	}
 
-	public function getLastActivedAttribute($value) {
+	public function getLastActivedAtAttribute($value) {
 
 		// 获取今日对应的哈希表名称
 		$hash = $this->getHashFromDateString(Carbon::now()->toDateString());

@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\TopicRequest;
 use App\Models\Category;
 use App\Models\Topic;
+use App\Models\User;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -15,9 +16,12 @@ class TopicsController extends Controller {
 		$this->middleware('auth', ['except' => ['index', 'show']]);
 	}
 
-	public function index(TopicRequest $request, Topic $topic) {
+	public function index(TopicRequest $request, Topic $topic, User $user) {
+
 		$topics = $topic->withOrder($request->order)->paginate(20);
-		return view('topics.index', compact('topics'));
+		$active_users = $user->getActiveUsers(); // 取出活跃用户
+
+		return view('topics.index', compact('topics', 'active_users'));
 	}
 
 	public function show(Request $request, Topic $topic) {

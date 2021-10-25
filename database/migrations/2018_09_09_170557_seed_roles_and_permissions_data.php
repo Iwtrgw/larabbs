@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Migrations\Migration;
 use Spatie\Permission\Models\Permission;
@@ -41,7 +40,7 @@ class SeedRolesAndPermissionsData extends Migration {
 		app()['cache']->forget('spatie.permission.cache');
 
 		// 清空所有数据表数据
-		$tableNames = config('permission.tabel_names');
+		$tableNames = config('permission.table_names');
 
 		Model::unguard();
 		DB::table($tableNames['role_has_permissions'])->delete();

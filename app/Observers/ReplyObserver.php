@@ -23,4 +23,12 @@ class ReplyObserver {
 	public function creating(Reply $reply) {
 		$reply->content = clean($reply->content, 'user_topic_body');
 	}
+
+	// 评论删除回复数量总数 -1
+	public function deleted(Reply $reply) {
+
+		if ($reply->topic->reply_count > 0) {
+			$reply->topic->decrement('reply_count', 1);
+		}
+	}
 }

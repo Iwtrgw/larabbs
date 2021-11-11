@@ -5,6 +5,11 @@ namespace App\Models;
 class Topic extends Model {
 	protected $fillable = ['title', 'body', 'category_id', 'excerpt', 'slug'];
 
+	// 关联回复表
+	public function replies() {
+		return $this->hasMany(Reply::class);
+	}
+
 	// 关联分类表
 	public function category() {
 		return $this->belongsTo(Category::class);

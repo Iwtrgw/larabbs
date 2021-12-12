@@ -64,15 +64,19 @@ return array(
 			'roles',
 			'permissions',
 		],
-		'内容管理' => [
-			'categories',
-			'topics',
-			'replies',
-		],
-		'站点管理' => [
-			'settings.site',
-			'links',
-		],
+        '用户管理' => [
+            'settings.site',
+            'links',
+        ],
+        '内容管理' => [
+            'categories',
+            'topics',
+            'replies',
+        ],
+        '站点管理' => [
+            'settings.site',
+            'links',
+        ],
 	],
 
 	/*

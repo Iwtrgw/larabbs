@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Handlers\ImageUploadHandler;
+use App\Http\Requests\Request;
 use App\Http\Requests\UserRequest;
 use App\Models\Content;
 
@@ -73,5 +74,21 @@ class ContentController extends Controller
         $user->update($data);
 
         return redirect()->route('users.show', $user->id)->with('success', '内容更新成功！');
+    }
+
+    /**
+     *  删除
+     * @param Request $request
+     * @param string $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
+    public function delContent(Request $request, $id='')
+    {
+        $content = Content::find($id);
+        if (!$content){
+            return redirect();
+        }
+        $content->delete();
+        return view('users.show');
     }
 }

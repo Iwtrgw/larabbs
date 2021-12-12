@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use Auth;
 use Closure;
 use Illuminate\Support\Facades\Log;
-use Monolog\Logger;
 
 /**
  *  内容中间件

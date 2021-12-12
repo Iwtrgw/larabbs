@@ -47,3 +47,6 @@ Route::resource('notifications', 'NotificationsController', ['only' => ['index']
 
 /* 后台无访问权限提示 */
 Route::get('permission-denied', 'PagesController@permissionDenied')->name('permission-denied');
+
+/* 内容 */
+Route::resource('content', 'ContentController', ['only' => ['show', 'update', 'edit','delete','changedStatus']]);

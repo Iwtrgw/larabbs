@@ -27,8 +27,8 @@ class ContentMiddleware {
 
 		    // 记录用户访问内容记录
 			Log::info('查看内容用户',Auth::user());
+		    return $next($request);
 		}
 
-		return $next($request);
 	}
 }

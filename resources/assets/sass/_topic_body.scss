@@ -305,4 +305,12 @@
     pre code:after {
         content: normal;
     }
+
+    div .anchor {
+        display: block;
+        padding: 2;
+        margin: 0;
+        border: 1px;
+        line-height: inherit;
+    }
 }

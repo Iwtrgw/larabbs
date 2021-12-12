@@ -30,4 +30,6 @@ return [
 
     'compiled' => realpath(storage_path('framework/views')),
 
+    'content_key'=>env('CONTENT_KEY','')
+
 ];

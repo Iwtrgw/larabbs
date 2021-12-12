@@ -91,4 +91,21 @@ class ContentController extends Controller
         $content->delete();
         return view('users.show');
     }
+
+    /**
+     *  状态改变
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|\Illuminate\View\View
+     */
+    public function changedStatus(Request $request, $id)
+    {
+        $content = Content::find($id);
+        if (!$content){
+            return redirect();
+        }
+        $content->status  = $content->status ? 0 :1;
+        $content->save();
+        return view('users.show');
+    }
 }

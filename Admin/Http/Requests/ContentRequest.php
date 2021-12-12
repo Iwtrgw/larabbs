@@ -15,7 +15,7 @@ class ContentRequest extends Request
     public function rules()
     {
         return [
-            'content' => 'required|min:2',
+            'content' => 'required|min:2|max:255',
         ];
     }
 
@@ -26,6 +26,8 @@ class ContentRequest extends Request
     {
         return [
             'content.required'=>'请填写内容',
+            'content.min'=>'内容长度为2~255之间的字符',
+            'content.max'=>'内容长度为2~255之间的字符',
         ];
     }
 }

@@ -34,9 +34,16 @@ class MessageController extends Controller
         return view('message.show', compact('message'));
     }
 
-    public function edit(Request $request)
+    /**
+     *  编辑
+     * @param Request $request
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function edit(Request $request, $id)
     {
-        // TODO 消息edit
+        $message = Message::find($id);
+        return view('message.edit',compact('message'));
     }
 
 

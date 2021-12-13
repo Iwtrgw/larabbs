@@ -162,3 +162,4 @@ return [
         'default' => true,
         'currency' => 'USD',
     ],
+   ];

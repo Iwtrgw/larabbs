@@ -8,4 +8,9 @@ class UserService
     {
         
     }
+
+    public function edit($user)
+    {
+        
+    }
 }

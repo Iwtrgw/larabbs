@@ -2,7 +2,7 @@
 
 namespace App\Http\Services;
 
-class UserSerice
+class UserService
 {
 
 }

@@ -13,4 +13,9 @@ class UserService
     {
         
     }
+
+    public function del($uid)
+    {
+        
+    }
 }

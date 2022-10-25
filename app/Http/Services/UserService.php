@@ -34,7 +34,7 @@ class UserService
 
     /**
      *  用户更新/编辑
-     * @param User $user
+     * @param Request $request
      * @return false
      */
     public function edit(Request $request): bool

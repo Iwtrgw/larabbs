@@ -27,7 +27,7 @@ class UserService
             }
             return $user->save();
         }catch (\Exception $e){
-            Log::info('用户创建失败',[$e]);
+            Log::error('用户创建失败',[$e]);
             return false;
         }
     }
@@ -51,7 +51,7 @@ class UserService
             $data = $request->all();
             return $user->save($data);
         }catch (\Exception $e){
-            Log::info('用户更新失败',[$e]);
+            Log::error('用户更新失败',[$e]);
             return false;
         }
     }

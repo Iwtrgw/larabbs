@@ -60,10 +60,11 @@ class UserService
     }
 
     /**
+     *  用户删除
      * @param Request $request
      * @return false
      */
-    public function del(Request $request)
+    public function del(Request $request): bool
     {
         try {
             $rule = Auth::user(['rule']);

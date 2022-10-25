@@ -4,6 +4,7 @@ namespace App\Http\Services;
 
 use App\Http\Requests\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 
 /**
@@ -60,10 +61,20 @@ class UserService
 
     /**
      * @param $uid
-     * @return void
+     * @return false
      */
-    public function del($uid)
+    public function del(Request $request)
     {
-
+        try {
+            $rule = Auth::user(['rule']);
+            if (!$rule){
+                Log::error('无权操作');
+                return false;
+            }
+            return User::where('id',$request->get('uid'))->delete();
+        }catch (\Exception $e){
+            Log::error('用户删除失败',[$e]);
+            return false;
+        }
     }
 }

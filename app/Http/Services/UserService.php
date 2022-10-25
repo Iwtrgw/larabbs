@@ -60,7 +60,7 @@ class UserService
     }
 
     /**
-     * @param $uid
+     * @param Request $request
      * @return false
      */
     public function del(Request $request)

@@ -4,6 +4,7 @@ namespace App\Http\Services;
 
 use App\Http\Requests\Request;
 use App\Models\User;
+use Illuminate\Support\Facades\Log;
 
 /**
  * UserService 用户服务
@@ -18,11 +19,16 @@ class UserService
      */
     public function save(User $user, Request $request): bool
     {
-        $data = $request->all();
-        if ($data['uid']){
+        try {
+            $data = $request->all();
+            if ($data['uid']){
+                return false;
+            }
+            return $user->save();
+        }catch (\Exception $e){
+            Log::info('用户创建失败',[$e]);
             return false;
         }
-        return $user->save();
     }
 
     /**

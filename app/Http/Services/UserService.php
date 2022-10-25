@@ -42,10 +42,12 @@ class UserService
         try {
             $uid = $request->get('uid');
             if (!$uid){
+                Log::error('非法操作');
                 return false;
             }
             $user = User::findById($uid);
             if (!$user){
+                Log::error('用户不存在',[$user]);
                 return false;
             }
             $data = $request->all();

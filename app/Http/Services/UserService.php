@@ -13,6 +13,7 @@ class UserService
 {
 
     /**
+     *  用户创建
      * @param User $user
      * @param Request $request
      * @return bool
@@ -32,12 +33,27 @@ class UserService
     }
 
     /**
+     *  用户更新/编辑
      * @param User $user
-     * @return void
+     * @return false
      */
-    public function edit(User $user)
+    public function edit(Request $request): bool
     {
-
+        try {
+            $uid = $request->get('uid');
+            if (!$uid){
+                return false;
+            }
+            $user = User::findById($uid);
+            if (!$user){
+                return false;
+            }
+            $data = $request->all();
+            return $user->save($data);
+        }catch (\Exception $e){
+            Log::info('用户更新失败',[$e]);
+            return false;
+        }
     }
 
     /**

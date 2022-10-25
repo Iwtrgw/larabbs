@@ -45,16 +45,19 @@ class User extends Authenticatable {
 		'password', 'remember_token',
 	];
 
-	public function topics() {
+	public function topics(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
 		return $this->hasMany(Topic::class);
 	}
 
-	public function isAuthorOf($model) {
+	public function isAuthorOf($model): bool
+    {
 		return $this->id == $model->user_id;
 	}
 
 	// 关联回复表
-	public function replies() {
+	public function replies(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
 		return $this->hasMany(Reply::class);
 	}
 

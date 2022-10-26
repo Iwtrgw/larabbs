@@ -5,14 +5,29 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Cache;
 
+/**
+ *
+ */
 class Link extends Model
 {
 
+    /**
+     * @var string[]
+     */
     protected $fillable = ['title', 'link'];
 
+    /**
+     * @var string
+     */
     public $cache_key = 'larabbs_links';
+    /**
+     * @var int
+     */
     protected $cache_expire_in_minutes = 1440;
 
+    /**
+     * @return mixed
+     */
     public function getAllCached()
     {
         // 尝试从缓存中取出 cache_key 对应的数据。如果能出到，便直接返回数据。

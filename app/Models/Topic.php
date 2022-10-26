@@ -90,7 +90,7 @@ class Topic extends Model
      * @param $params
      * @return string
      */
-    public function link($params = [])
+    public function link($params = []): string
     {
         return route('topics.show', array_merge([$this->id, $this->slug], $params));
     }

@@ -2,14 +2,29 @@
 
 namespace App\Models;
 
-class Reply extends Model {
-	protected $fillable = ['content'];
+/**
+ * Reply Model
+ */
+class Reply extends Model
+{
+    /**
+     * @var string[]
+     */
+    protected $fillable = ['content'];
 
-	public function topic() {
-		return $this->belongsTo(Topic::class);
-	}
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function topic()
+    {
+        return $this->belongsTo(Topic::class);
+    }
 
-	public function user() {
-		return $this->belongsTo(User::class);
-	}
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

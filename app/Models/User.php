@@ -7,6 +7,9 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Auth;
 use Spatie\Permission\Traits\HasRoles;
 
+/**
+ * User model
+ */
 class User extends Authenticatable {
 	use Traits\ActiveUserHelper;
 	use Traits\LastActivedAtHelper;

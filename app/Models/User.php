@@ -112,7 +112,12 @@ class User extends Authenticatable {
 	}
 
 	// 用户头像上传路径处理
-	public function setAvatarAttribute($path) {
+
+    /**
+     * @param $path
+     * @return void
+     */
+    public function setAvatarAttribute($path) {
 		// 如果不是 'http' 开头，那就是从后台上传的，需要实例 URL
 		if (!starts_with($path, 'http')) {
 

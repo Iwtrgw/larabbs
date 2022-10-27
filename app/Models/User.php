@@ -42,7 +42,10 @@ class User extends Authenticatable {
 		'name', 'email', 'password', 'introduction', 'avatar',
 	];
 
-	protected $dates = ['last_actived_at'];
+    /**
+     * @var string[]
+     */
+    protected $dates = ['last_actived_at'];
 
 	/**
 	 * The attributes that should be hidden for arrays.

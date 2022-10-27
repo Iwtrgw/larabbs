@@ -95,7 +95,12 @@ class User extends Authenticatable {
 	}
 
 	// 密码哈希
-	public function setPasswordAttribute($value) {
+
+    /**
+     * @param $value
+     * @return void
+     */
+    public function setPasswordAttribute($value) {
 		// 如果值的长度等于 60，即认为是已经做过加密的情况
 		if (strlen($value) != 60) {
 

@@ -74,7 +74,11 @@ class User extends Authenticatable {
 	}
 
 	// 关联回复表
-	public function replies(): \Illuminate\Database\Eloquent\Relations\HasMany
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function replies(): \Illuminate\Database\Eloquent\Relations\HasMany
     {
 		return $this->hasMany(Reply::class);
 	}

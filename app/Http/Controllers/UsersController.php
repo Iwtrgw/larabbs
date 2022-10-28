@@ -6,6 +6,9 @@ use App\Handlers\ImageUploadHandler;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 
+/**
+ * UsersController
+ */
 class UsersController extends Controller
 {
 

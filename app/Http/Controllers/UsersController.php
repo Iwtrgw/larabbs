@@ -12,6 +12,9 @@ use App\Models\User;
 class UsersController extends Controller
 {
 
+    /**
+     *  构造方法
+     */
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['show']]);

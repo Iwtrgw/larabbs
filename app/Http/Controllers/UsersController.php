@@ -54,7 +54,7 @@ class UsersController extends Controller
      * @return \Illuminate\Http\RedirectResponse
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
+    public function update(UserRequest $request, ImageUploadHandler $uploader, User $user): \Illuminate\Http\RedirectResponse
     {
 
         $this->authorize('update', $user);

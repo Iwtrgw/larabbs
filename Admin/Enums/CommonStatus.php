@@ -12,8 +12,8 @@ namespace App\Enums;
 class CommonStatus extends Enums
 {
 
-    public const USABLE  = 0;
-    public const DISABLE = 1;
+    const USABLE  = 0;
+    const DISABLE = 1;
 
     public static $translations = [
         self::USABLE  => '可用',

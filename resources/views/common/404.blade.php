@@ -1,1 +1,3 @@
-<?php
+<div class="alert alert-danger">
+
+</div>

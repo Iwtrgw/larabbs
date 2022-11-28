@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 /**
- *
+ * ReplyRequest
  */
 class ReplyRequest extends Request
 {

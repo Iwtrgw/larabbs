@@ -3,10 +3,13 @@
 namespace App\Http\Requests;
 
 /**
- *
+ * ReplyRequest
  */
 class ReplyRequest extends Request
 {
+    /**
+     * @return string[]
+     */
     public function rules()
     {
         return [
@@ -17,7 +20,7 @@ class ReplyRequest extends Request
     public function messages()
     {
         return [
-            // Validation messages
+            'content.required'=>'请填写内容',
         ];
     }
 }

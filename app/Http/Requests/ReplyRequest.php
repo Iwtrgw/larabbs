@@ -20,7 +20,7 @@ class ReplyRequest extends Request
     public function messages()
     {
         return [
-            // Validation messages
+            'content.required'=>'请填写内容',
         ];
     }
 }

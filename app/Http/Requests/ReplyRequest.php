@@ -17,7 +17,7 @@ class ReplyRequest extends Request
         ];
     }
 
-    public function messages()
+    public function messages(): array
     {
         return [
             'content.required'=>'请填写内容',

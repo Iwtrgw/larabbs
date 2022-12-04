@@ -8,6 +8,7 @@ namespace App\Http\Requests;
 class ReplyRequest extends Request
 {
     /**
+     * 验证规则
      * @return string[]
      */
     public function rules(): array

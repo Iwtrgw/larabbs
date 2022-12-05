@@ -19,6 +19,7 @@ class ReplyRequest extends Request
     }
 
     /**
+     * 提示内容
      * @return string[]
      */
     public function messages(): array

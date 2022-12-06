@@ -5,6 +5,9 @@ namespace App\Console\Commands;
 use App\Models\User;
 use Illuminate\Console\Command;
 
+/**
+ *
+ */
 class CalculateActiveUser extends Command {
 	// 供我们调用的命令
 	protected $signature = 'larabbs:calculate-active-user';

@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Console\Command;
 
 /**
- *
+ *  CalculateActiveUser Command
  */
 class CalculateActiveUser extends Command {
 	// 供我们调用的命令

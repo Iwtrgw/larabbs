@@ -10,7 +10,10 @@ use Illuminate\Console\Command;
  */
 class CalculateActiveUser extends Command {
 	// 供我们调用的命令
-	protected $signature = 'larabbs:calculate-active-user';
+    /**
+     * @var string
+     */
+    protected $signature = 'larabbs:calculate-active-user';
 
 	// 命令的描述
 	protected $description = '生成活跃用户';

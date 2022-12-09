@@ -9,8 +9,8 @@ use Illuminate\Console\Command;
  *  CalculateActiveUser Command
  */
 class CalculateActiveUser extends Command {
-	// 供我们调用的命令
     /**
+     * 供我们调用的命令
      * @var string
      */
     protected $signature = 'larabbs:calculate-active-user';

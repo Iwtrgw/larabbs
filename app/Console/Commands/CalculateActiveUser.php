@@ -15,8 +15,11 @@ class CalculateActiveUser extends Command {
      */
     protected $signature = 'larabbs:calculate-active-user';
 
-	// 命令的描述
-	protected $description = '生成活跃用户';
+    /**
+     * 命令的描述
+     * @var string
+     */
+    protected $description = '生成活跃用户';
 
 	// 最终执行的方法
 	public function handle(User $user) {

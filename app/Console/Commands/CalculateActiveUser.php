@@ -22,7 +22,12 @@ class CalculateActiveUser extends Command {
     protected $description = '生成活跃用户';
 
 	// 最终执行的方法
-	public function handle(User $user) {
+
+    /**
+     * @param User $user
+     * @return void
+     */
+    public function handle(User $user) {
 		// 在命令行打印一行信息
 		$this->info("开始计算...");
 

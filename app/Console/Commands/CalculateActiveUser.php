@@ -21,9 +21,9 @@ class CalculateActiveUser extends Command {
      */
     protected $description = '生成活跃用户';
 
-	// 最终执行的方法
 
     /**
+     * 最终执行的方法
      * @param User $user
      * @return void
      */

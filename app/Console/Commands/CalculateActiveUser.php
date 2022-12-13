@@ -8,7 +8,8 @@ use Illuminate\Console\Command;
 /**
  *  CalculateActiveUser Command
  */
-class CalculateActiveUser extends Command {
+class CalculateActiveUser extends Command
+{
     /**
      * 供我们调用的命令
      * @var string
@@ -27,12 +28,13 @@ class CalculateActiveUser extends Command {
      * @param User $user
      * @return void
      */
-    public function handle(User $user) {
-		// 在命令行打印一行信息
-		$this->info("开始计算...");
+    public function handle(User $user)
+    {
+        // 在命令行打印一行信息
+        $this->info("开始计算...");
 
-		$user->calculateAndCacheActiveUsers();
+        $user->calculateAndCacheActiveUsers();
 
-		$this->info("成功生成！");
-	}
+        $this->info("成功生成！");
+    }
 }

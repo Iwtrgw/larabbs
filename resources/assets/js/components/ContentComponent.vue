@@ -6,7 +6,7 @@
                     <div class="panel-heading">内容组件</div>
 
                     <div class="panel-body">
-                       {{ content.context }}
+                        {{ content.context }}
                     </div>
                 </div>
             </div>
@@ -15,19 +15,19 @@
 </template>
 
 <script>
-    export default {
-        props:{
-            content:{
-                type:Object,
-                default:null
-            }
-        },
-        data:function(){
-          return {
-              content:null
-          }
-        },
-        mounted() {
-        },
-    }
+export default {
+    props: {
+        content: {
+            type: Object,
+            default: null
+        }
+    },
+    data: function () {
+        return {
+            content: null
+        }
+    },
+    mounted() {
+    },
+}
 </script>

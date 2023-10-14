@@ -1,7 +1,7 @@
 <div class="alert alert-danger">
-    <h4> 404 </h4>
+    <h4> About </h4>
     <div>
         {{--    CONTENT    --}}
-       Page Not Found!
+       About page Content......
     </div>
 </div>

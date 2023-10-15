@@ -33,7 +33,6 @@ class AboutController extends Controller
 
     /**
      *  个人资料编辑页面展示
-     * @param User $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\View\View
      */
     public function edit(Request $request)

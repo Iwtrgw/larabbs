@@ -37,7 +37,7 @@ class AboutController extends Controller
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\View\View
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function edit(User $user)
+    public function edit(Request $request)
     {
 
         $this->authorize('update', $user);

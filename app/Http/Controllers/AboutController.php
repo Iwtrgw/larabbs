@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Request;
 use App\Http\Requests\UserRequest;
-use App\Models\User;
 
 /**
  * UsersController

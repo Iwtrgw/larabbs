@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\Request;
 use App\Http\Requests\UserRequest;
-use App\Models\User;
 
 /**
  * UsersController
@@ -23,7 +22,6 @@ class AboutController extends Controller
 
     /**
      * 个人页面展示
-     * @param User $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\View\View
      */
     public function show(Request $request)
@@ -34,15 +32,12 @@ class AboutController extends Controller
 
     /**
      *  个人资料编辑页面展示
-     * @param User $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\View\View
-     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
-    public function edit(User $user)
+    public function edit(Request $request)
     {
 
-        $this->authorize('update', $user);
-        return view('users.edit', compact('user'));
+        return view('about', compact($request->all()));
     }
 
 

@@ -40,7 +40,6 @@ class AboutController extends Controller
     public function edit(Request $request)
     {
 
-        $this->authorize('update', $user);
         return view('users.edit', compact('user'));
     }
 

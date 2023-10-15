@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Handlers\ImageUploadHandler;
+use App\Http\Requests\Request;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 
@@ -26,7 +26,7 @@ class AboutController extends Controller
      * @param User $user
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\View\View
      */
-    public function show(User $user)
+    public function show(Request $request)
     {
         return view('about');
     }

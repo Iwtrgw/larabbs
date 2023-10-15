@@ -40,7 +40,7 @@ class AboutController extends Controller
     public function edit(Request $request)
     {
 
-        return view('users.edit', compact('user'));
+        return view('about', compact($request->all()));
     }
 
 

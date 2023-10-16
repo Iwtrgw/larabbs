@@ -44,7 +44,6 @@ class AboutController extends Controller
     /**
      *  个人资料更新
      * @param User $user
-     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user): \Illuminate\Http\RedirectResponse
     {

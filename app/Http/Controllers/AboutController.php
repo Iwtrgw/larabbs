@@ -48,7 +48,6 @@ class AboutController extends Controller
     {
 
 
-
         if ($request->avatar) {
 
         }

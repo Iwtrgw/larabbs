@@ -43,7 +43,6 @@ class AboutController extends Controller
 
     /**
      *  个人资料更新
-     * @param UserRequest $request
      * @param ImageUploadHandler $uploader
      * @param User $user
      * @return \Illuminate\Http\RedirectResponse

@@ -47,7 +47,6 @@ class AboutController extends Controller
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user): \Illuminate\Http\RedirectResponse
     {
 
-        $this->authorize('update', $user);
 
         $data = $request->all();
 

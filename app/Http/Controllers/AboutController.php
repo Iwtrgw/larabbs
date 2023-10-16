@@ -43,28 +43,9 @@ class AboutController extends Controller
 
     /**
      *  个人资料更新
-     * @param UserRequest $request
-     * @param ImageUploadHandler $uploader
-     * @param User $user
-     * @return \Illuminate\Http\RedirectResponse
-     * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user): \Illuminate\Http\RedirectResponse
     {
-
-        $this->authorize('update', $user);
-
-        $data = $request->all();
-
-        if ($request->avatar) {
-            $result = $uploader->save($request->avatar, 'avatars', $user->id, 362);
-            if ($result) {
-                $data['avatar'] = $result['path'];
-            }
-        }
-
-        $user->update($data);
-
         return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
     }
 }

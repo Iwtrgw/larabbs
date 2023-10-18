@@ -44,7 +44,7 @@ class AboutController extends Controller
     /**
      *  个人资料更新
      */
-    public function update(User $user)
+    public function update()
     {
 //        return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
     }

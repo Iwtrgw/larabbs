@@ -41,9 +41,7 @@ class AboutController extends Controller
     }
 
 
-    /**
-     *  个人资料更新
-     */
+
     public function update()
     {
     }

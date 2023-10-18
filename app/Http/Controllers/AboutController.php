@@ -39,13 +39,4 @@ class AboutController extends Controller
 
         return view('about', compact($request->all()));
     }
-
-
-    /**
-     *  个人资料更新
-     */
-    public function update(UserRequest $request, ImageUploadHandler $uploader, User $user): \Illuminate\Http\RedirectResponse
-    {
-        return redirect()->route('users.show', $user->id)->with('success', '个人资料更新成功！');
-    }
 }

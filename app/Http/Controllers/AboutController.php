@@ -39,8 +39,4 @@ class AboutController extends Controller
 
         return view('about', compact($request->all()));
     }
-
-
-
-
 }

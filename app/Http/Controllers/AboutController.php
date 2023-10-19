@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\Request;
-use App\Http\Requests\UserRequest;
 
 /**
  * UsersController

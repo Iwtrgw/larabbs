@@ -9,8 +9,7 @@ use App\Http\Requests\Request;
  */
 class AboutController extends Controller
 {
-
-
+    
     public function __construct()
     {
     }

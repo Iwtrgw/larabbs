@@ -10,9 +10,7 @@ use App\Http\Requests\Request;
 class AboutController extends Controller
 {
 
-    /**
-     *  构造方法
-     */
+
     public function __construct()
     {
     }

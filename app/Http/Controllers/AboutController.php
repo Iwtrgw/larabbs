@@ -11,15 +11,6 @@ class AboutController extends Controller
 {
 
     /**
-     *  构造方法
-     */
-    public function __construct()
-    {
-//        $this->middleware('auth', ['except' => ['show']]);
-    }
-
-
-    /**
      * 个人页面展示
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\View\View
      */

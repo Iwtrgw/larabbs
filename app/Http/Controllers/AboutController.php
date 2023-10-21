@@ -11,7 +11,6 @@ class AboutController extends Controller
 {
 
 
-
     /**
      * 个人页面展示
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\Foundation\Application|\Illuminate\View\View

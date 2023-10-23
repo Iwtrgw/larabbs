@@ -27,6 +27,6 @@ class OrderStatus extends Enums
      */
     public static function checkUsable($status)
     {
-        return $status == CommonStatus::USABLE;
+        return $status == OrderStatus::USABLE;
     }
 }

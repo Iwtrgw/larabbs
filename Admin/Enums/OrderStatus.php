@@ -5,11 +5,11 @@ namespace App\Enums;
 
 
 /**
- * 通用状态说明
+ * 订单状态说明
  * Class PaymentType
  * @package App\Enums
  */
-class CommonStatus extends Enums
+class OrderStatus extends Enums
 {
 
     const USABLE  = 0;

@@ -25,7 +25,7 @@ class OrderStatus extends Enums
      * @param $status
      * @return bool
      */
-    public static function checkUsable($status)
+    public static function checkUsable($status): bool
     {
         return $status == OrderStatus::USABLE;
     }

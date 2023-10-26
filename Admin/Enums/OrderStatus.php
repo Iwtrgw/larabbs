@@ -21,7 +21,7 @@ class OrderStatus extends Enums
     ];
 
     /**
-     * 检查是否可用
+     * 订单支付状态
      * @param $status
      * @return bool
      */

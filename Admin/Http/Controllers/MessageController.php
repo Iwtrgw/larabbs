@@ -23,9 +23,8 @@ class MessageController extends Controller
         $this->middleware('auth', ['except' => ['show']]);
     }
 
-    // 消息页面
-
     /**
+     * 消息页面
      * @param Message $message
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

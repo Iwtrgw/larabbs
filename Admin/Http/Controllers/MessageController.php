@@ -26,7 +26,7 @@ class MessageController extends Controller
     //
 
     /**
-     *
+     * 消息页面
      * @param Message $message
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

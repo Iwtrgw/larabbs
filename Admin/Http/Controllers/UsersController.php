@@ -14,13 +14,17 @@ class UsersController extends Controller
         $this->middleware('auth', ['except' => ['show']]);
     }
 
-    // 个人页面展示
+    /*
+     * 个人页面展示
+     * */
     public function show(User $user)
     {
         return view('users.show', compact('user'));
     }
 
-    // 个人资料编辑页面展示
+    /*
+     * 个人资料编辑页面展示
+     * */
     public function edit(User $user)
     {
 

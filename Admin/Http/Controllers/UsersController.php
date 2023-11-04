@@ -22,7 +22,9 @@ class UsersController extends Controller
         return view('users.show', compact('user'));
     }
 
-    //
+    /*
+     * 个人资料编辑页面展示
+     * */
     public function edit(User $user)
     {
 

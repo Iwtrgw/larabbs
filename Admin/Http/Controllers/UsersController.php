@@ -33,7 +33,7 @@ class UsersController extends Controller
     }
 
     /*
-     *
+     * 个人资料更新
      * */
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
     {

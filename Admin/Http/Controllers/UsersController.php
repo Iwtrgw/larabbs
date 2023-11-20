@@ -32,7 +32,9 @@ class UsersController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    // 个人资料更新
+    /*
+     * 个人资料更新
+     * */
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
     {
 

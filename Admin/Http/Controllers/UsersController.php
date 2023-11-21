@@ -6,9 +6,15 @@ use App\Handlers\ImageUploadHandler;
 use App\Http\Requests\UserRequest;
 use App\Models\User;
 
+/**
+ * 用户 Controller
+ */
 class UsersController extends Controller
 {
 
+    /**
+     *
+     */
     public function __construct()
     {
         $this->middleware('auth', ['except' => ['show']]);

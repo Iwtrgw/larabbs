@@ -43,9 +43,15 @@ class UsersController extends Controller
         return view('users.edit', compact('user'));
     }
 
-    /*
+
+    /**
      * 个人资料更新
-     * */
+     * @param UserRequest $request
+     * @param ImageUploadHandler $uploader
+     * @param User $user
+     * @return \Illuminate\Http\RedirectResponse
+     * @throws \Illuminate\Auth\Access\AuthorizationException
+     */
     public function update(UserRequest $request, ImageUploadHandler $uploader, User $user)
     {
 

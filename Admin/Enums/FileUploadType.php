@@ -22,6 +22,9 @@ class FileUploadType extends Enums
      */
     public const PLATFORM_PAYMENT_QRCODE = 'PLATFORM_PAYMENT_QRCODE';
 
+    /**
+     *
+     */
     public const RECHARGE_VOUCHER = 'RECHARGE_VOUCHER';
 
     public static $translations = [

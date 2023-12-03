@@ -22,6 +22,9 @@ class OrderStatus extends Enums
      */
     const DISABLE = 1;
 
+    /**
+     * @var string[]
+     */
     public static $translations = [
         self::USABLE  => '已支付',
         self::DISABLE => '未支付',

@@ -12,6 +12,9 @@ namespace App\Enums;
 class CommonStatus extends Enums
 {
 
+    /**
+     *
+     */
     const USABLE  = 0;
     const DISABLE = 1;
 

@@ -21,6 +21,9 @@ class CommonStatus extends Enums
      */
     const DISABLE = 1;
 
+    /**
+     * @var string[]
+     */
     public static $translations = [
         self::USABLE  => '可用',
         self::DISABLE => '禁用',

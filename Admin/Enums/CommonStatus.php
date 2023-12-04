@@ -16,6 +16,9 @@ class CommonStatus extends Enums
      *
      */
     const USABLE  = 0;
+    /**
+     *
+     */
     const DISABLE = 1;
 
     public static $translations = [

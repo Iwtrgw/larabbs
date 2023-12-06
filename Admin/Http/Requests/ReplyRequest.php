@@ -17,6 +17,9 @@ class ReplyRequest extends Request
         ];
     }
 
+    /**
+     * @return array
+     */
     public function messages()
     {
         return [

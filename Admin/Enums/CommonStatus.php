@@ -34,7 +34,7 @@ class CommonStatus extends Enums
      * @param $status
      * @return bool
      */
-    public static function checkUsable($status)
+    public static function checkUsable($status): bool
     {
         return $status == CommonStatus::USABLE;
     }

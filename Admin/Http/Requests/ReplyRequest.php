@@ -7,6 +7,9 @@ namespace App\Http\Requests;
  */
 class ReplyRequest extends Request
 {
+    /**
+     * @return string[]
+     */
     public function rules()
     {
         return [

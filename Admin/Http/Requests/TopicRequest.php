@@ -35,6 +35,9 @@ class TopicRequest extends Request
         }
     }
 
+    /**
+     * @return string[]
+     */
     public function messages()
     {
         return [

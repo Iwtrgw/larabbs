@@ -2,6 +2,9 @@
 
 namespace App\Http\Requests;
 
+/**
+ * TopicRequest
+ */
 class TopicRequest extends Request
 {
     public function rules()

@@ -2,8 +2,15 @@
 
 namespace App\Http\Requests;
 
+/**
+ * TopicRequest
+ */
 class TopicRequest extends Request
 {
+
+    /**
+     * @return array|string[]
+     */
     public function rules()
     {
         switch ($this->method()) {
@@ -28,6 +35,9 @@ class TopicRequest extends Request
         }
     }
 
+    /**
+     * @return string[]
+     */
     public function messages()
     {
         return [

@@ -7,6 +7,10 @@ namespace App\Http\Requests;
  */
 class TopicRequest extends Request
 {
+
+    /**
+     * @return array|string[]
+     */
     public function rules()
     {
         switch ($this->method()) {

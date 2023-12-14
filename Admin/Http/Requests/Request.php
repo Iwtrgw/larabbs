@@ -9,6 +9,9 @@ use Illuminate\Foundation\Http\FormRequest;
  */
 class Request extends FormRequest
 {
+    /**
+     * @return bool
+     */
     public function authorize()
     {
     	// Using policy for Authorization

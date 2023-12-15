@@ -5,6 +5,9 @@ namespace App\Http\Requests;
 use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * UserRequest
+ */
 class UserRequest extends FormRequest
 {
     /**

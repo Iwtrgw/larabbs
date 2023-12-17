@@ -35,7 +35,11 @@ class UserRequest extends FormRequest
         ];
     }
 
-    // 自定义提示信息
+
+    /**
+     *  自定义提示信息
+     * @return string[]
+     */
     public function messages()
     {
         return [

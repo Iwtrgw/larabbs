@@ -5,6 +5,9 @@ namespace App\Http\Requests;
 use Auth;
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * UserRequest
+ */
 class UserRequest extends FormRequest
 {
     /**
@@ -12,7 +15,7 @@ class UserRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
@@ -22,7 +25,7 @@ class UserRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'name'         => 'required|between:3,25|regex:/^[A-Za-z0-9\-\_]+$/|unique:users,name,' . Auth::id(),
@@ -32,8 +35,12 @@ class UserRequest extends FormRequest
         ];
     }
 
-    // 自定义提示信息
-    public function messages()
+
+    /**
+     *  自定义提示信息
+     * @return string[]
+     */
+    public function messages(): array
     {
         return [
             'avatar.mimes'      => '头像必须是 jpeg,bmp,png,gif 格式的图片',

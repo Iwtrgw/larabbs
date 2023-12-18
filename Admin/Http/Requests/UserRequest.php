@@ -40,7 +40,7 @@ class UserRequest extends FormRequest
      *  自定义提示信息
      * @return string[]
      */
-    public function messages()
+    public function messages(): array
     {
         return [
             'avatar.mimes'      => '头像必须是 jpeg,bmp,png,gif 格式的图片',

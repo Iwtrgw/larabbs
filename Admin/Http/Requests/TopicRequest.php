@@ -11,7 +11,7 @@ class TopicRequest extends Request
     /**
      * @return array|string[]
      */
-    public function rules()
+    public function rules(): array
     {
         switch ($this->method()) {
             // CREATE

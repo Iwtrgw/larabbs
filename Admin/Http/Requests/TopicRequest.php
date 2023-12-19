@@ -38,7 +38,7 @@ class TopicRequest extends Request
     /**
      * @return string[]
      */
-    public function messages()
+    public function messages(): array
     {
         return [
             'title.min' => '标题必须至少两个字符',
